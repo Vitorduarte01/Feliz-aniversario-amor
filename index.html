@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Para o Amor da Minha Vida</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #fce4ec;
+            font-family: 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        header {
+            padding: 40px 20px 20px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2em;
+            color: #c2185b;
+            margin: 0;
+        }
+        
+        .carta-container {
+            width: 90%;
+            max-width: 400px;
+            perspective: 1000px;
+            margin-bottom: 30px;
+        }
+        
+        .carta {
+            width: 100%;
+            height: auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .carta.abrir {
+            transform: rotateY(180deg);
+        }
+        
+        .frente,
+        .verso {
+            backface-visibility: hidden;
+            padding: 30px 20px;
+            border-radius: 10px;
+            position: absolute;
+            width: 100%;
+            box-sizing: border-box;
+            top: 0;
+            left: 0;
+        }
+        
+        .frente {
+            background: #f06292;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+        
+        .verso {
+            background: #fff;
+            color: #333;
+            transform: rotateY(180deg);
+            overflow-y: auto;
+            max-height: 400px;
+            z-index: 2;
+            /* <-- garante que fique acima */
+            position: relative;
+            /* <-- necessário para z-index funcionar */
+        }
+        
+        .verso p {
+            white-space: pre-wrap;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+        
+        .galeria {
+            width: 90%;
+            max-width: 400px;
+            margin-bottom: 40px;
+        }
+        
+        .galeria h2 {
+            text-align: center;
+            color: #ad1457;
+            margin-bottom: 10px;
+        }
+        
+        .fotos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .fotos img {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Feliz aniversário, amor 💖</h1>
+    </header>
+
+    <div class="carta-container">
+        <div class="carta" id="carta">
+            <div class="frente">Clique para abrir a carta 💌</div>
+            <div class="verso">
+                <p>
+                    Essa é uma carta que eu fiz, pra você entender o quão apaixonado eu estou, independente das suas inseguranças e das suas teimosias (😑), saiba que eu não quero te abandonar nunca. Estamos há quase um ano juntos, e todo meu foco hoje em dia é trabalho,
+                    minha família, e o mais importante para mim nesses últimos tempos, é claro que é você, meu amor. Minha admiração é você, quem eu mais amo é você, e tudo o que eu faço e pretendo fazer no futuro é especialmente pra te ver bem e feliz.
+                    Por isso, te desejo uma vida próspera e feliz ao meu lado. FELIZ ANIVERSÁRIO, VIDA. EU TE AMO DE TODO CORAÇÃO. 💖
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <section class="galeria">
+        <h2>Nossos momentos em vídeo 🎬 e uma fotinha nossa❤️</h2>
+        <div class="fotos">
+            <video controls width="100%" style="border-radius: 8px;">
+      <source src="imagens/WhatsApp Video 2025-05-11 at 18.13.31.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+
+            <video controls width="100%" style="border-radius: 8px;">
+      <source src="imagens/WhatsApp Video 2025-05-11 at 18.13.33 (1).mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+
+            <!-- Vídeo hospedado no próprio site -->
+            <video controls width="100%" style="border-radius: 8px;">
+      <source src="imagens/WhatsApp Video 2025-05-11 at 18.13.33.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+
+            <!-- Você pode misturar vídeos e fotos também -->
+            <img src="imagens/nos.jpeg" alt="Foto nossa" />
+        </div>
+    </section>
+
+
+    <script>
+        const carta = document.getElementById('carta');
+        carta.addEventListener('click', () => {
+            carta.classList.toggle('abrir');
+        });
+    </script>
+
+</body>
+
+</html>
